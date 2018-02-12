@@ -7,7 +7,7 @@ using namespace std;
 bool givenPointFindPaths(int px, int py, int x,int y);
 int field[4][5] = {{1,1,1,0,0},
                    {0,1,0,0,0},
-                   {1,1,9,0,1},
+                   {1,1,9,0,0},
                    {1,0,1,0,1}};
 
 vector< vector< int > > nodes;
@@ -59,4 +59,47 @@ bool givenPointFindPaths(int px, int py, int x,int y){
             givenPointFindPaths(x,y,x,y+1);
         }
     }
+    cout << endl;
 }
+
+/*
+#include <iostream>
+
+using namespace std;
+
+
+void findPair(int test[4], int &small, int &big, int sum);
+
+int main(){
+    int test[4] = {1,2,3,9};
+    int test2[4] = {1,2,4,4};
+
+    int sum = 8, small = 0, big = 0;
+
+    findPair(test, small, big, sum);
+
+
+    findPair(test2, small, big, sum);
+
+    return 0;
+}
+
+void findPair(int test[4], int &small, int &big, int sum){
+    small = 0; big = 3;
+    bool pairNotFound = true;
+    while(pairNotFound){
+        if(small == big){
+                cout << "nothing"<< endl;
+                pairNotFound = false;
+        }else if(test[small] + test[big] == sum){
+            cout << test[small] << test[big] <<  endl;
+            pairNotFound = false;
+
+        }else if(test[small] + test[big] > sum){
+            big--;
+        }else{
+            small++;
+        }
+    }
+}
+*/
